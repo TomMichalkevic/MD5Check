@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MD5Check/MD5Check.iml" filepath="$PROJECT_DIR$/MD5Check/MD5Check.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MD5CheckProject.iml" filepath="$PROJECT_DIR$/MD5CheckProject.iml" />
+    </modules>
+  </component>
+</project>
+
