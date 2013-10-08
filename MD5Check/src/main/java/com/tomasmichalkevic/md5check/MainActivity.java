@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class MainActivity extends Activity {
 
-    Button chooseFile, compareButton;
+    Button chooseFile, compareButton, clipboardButton;
     TextView text, matchStatus;
     String path;
     EditText input;
@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         chooseFile = (Button) findViewById(R.id.fileChoose);
         compareButton = (Button) findViewById(R.id.compareButton);
+        clipboardButton = (Button) findViewById(R.id.clipboardButton);
         text = (TextView) findViewById(R.id.hash);
         input = (EditText) findViewById(R.id.inputField);
         matchStatus = (TextView) findViewById(R.id.matchStatus);
@@ -55,15 +56,24 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        clipboardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String extractedHash = text.getText().toString();
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Hash", extractedHash);
+                clipboard.setPrimaryClip(clip);
+            }
+        });
     }
 
 
-    @Override
+    /**@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
