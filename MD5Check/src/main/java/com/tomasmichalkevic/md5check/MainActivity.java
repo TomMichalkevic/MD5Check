@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.content.*;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -19,8 +21,10 @@ public class MainActivity extends Activity {
 
     Button chooseFile, compareButton, clipboardButton;
     TextView text, matchStatus;
-    String path;
+    String path, notifyMessage;
     EditText input;
+    Context context;
+    int durationOfNotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,8 @@ public class MainActivity extends Activity {
         text = (TextView) findViewById(R.id.hash);
         input = (EditText) findViewById(R.id.inputField);
         matchStatus = (TextView) findViewById(R.id.matchStatus);
+        context = getApplicationContext();
+        notifyMessage = "Copied to Clipboard";
         chooseFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +69,9 @@ public class MainActivity extends Activity {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("Hash", extractedHash);
                 clipboard.setPrimaryClip(clip);
+                durationOfNotify = Toast.LENGTH_SHORT;
+                //Toast popup 14/10/2013
+                Toast.makeText(context, notifyMessage, durationOfNotify).show();
             }
         });
     }
