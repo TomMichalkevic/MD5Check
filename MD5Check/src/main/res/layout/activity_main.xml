@@ -28,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Compare"
+        android:text="@string/compare_text"
         android:id="@+id/compareButton"
         android:layout_below="@+id/inputField"
         android:layout_centerHorizontal="true" />
@@ -36,7 +36,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Does not match?"
+        android:text="@string/test_result"
         android:id="@+id/matchStatus"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/compareButton" />
@@ -48,5 +48,13 @@
         android:id="@+id/clipboardButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit_message"
+        android:id="@+id/exitButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

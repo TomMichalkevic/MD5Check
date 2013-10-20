@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name" >MD5 Check
-    </string>
-    <string name="action_settings" >Settings
-    </string>
-    <string name="hello_world" >Hello world!
-    </string>
-    <string name="main_message" >Choose a file
-    </string>
-    <string name="hash">Calculated hash will be shown here
-    </string>
-    <string name="hint">Paste your hash here
-    </string>
-    <string name="test_result">Does it match?
-    </string>
+    <string name="app_name">MD5 Check</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="main_message">Choose a file</string>
+    <string name="hash">Calculated hash will be shown here</string>
+    <string name="hint">Paste your hash here</string>
+    <string name="test_result">Does it match?</string>
+    <string name="hash_change_item">Change Hash</string>
+    <string name="about">About</string>
+    <string name="about_text">Hello, my name is Tomas and I am a newbie Android Developer. This application has been created mainly for educational purposes and to teach myself about Android development. This small app will allow you to check the MD5 hash(other hashes are to follow) of a file. I will be updating this application as much as possible. If you notice any bugs, please let me know and I will do all I can to fix them.</string>
+    <string name="title_activity_about_me">AboutActivity</string>
+    <string name="compare_text">Compare</string>
+    <string name="exit_message">Exit</string>
 
 </resources>

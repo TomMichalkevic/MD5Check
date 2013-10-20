@@ -2,7 +2,7 @@ package com.tomasmichalkevic.md5check;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.view.*;
 import android.view.View;
 import android.widget.Button;
 import android.content.*;
@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class MainActivity extends Activity {
 
-    Button chooseFile, compareButton, clipboardButton;
+    Button chooseFile, compareButton, clipboardButton, exitButton;
     TextView text, matchStatus;
     String path, notifyMessage;
     EditText input;
@@ -33,6 +33,7 @@ public class MainActivity extends Activity {
         chooseFile = (Button) findViewById(R.id.fileChoose);
         compareButton = (Button) findViewById(R.id.compareButton);
         clipboardButton = (Button) findViewById(R.id.clipboardButton);
+        exitButton = (Button) findViewById(R.id.exitButton);
         text = (TextView) findViewById(R.id.hash);
         input = (EditText) findViewById(R.id.inputField);
         matchStatus = (TextView) findViewById(R.id.matchStatus);
@@ -74,15 +75,36 @@ public class MainActivity extends Activity {
                 Toast.makeText(context, notifyMessage, durationOfNotify).show();
             }
         });
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 
-    /**@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
         return true;
-    }*/
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        /**    case R.id.hash_change_item:
+
+                return true;*/
+            case R.id.about:
+                Intent about = new Intent("com.tomasmichalkevic.md5check.ABOUTME");
+                startActivity(about);
+                return true;
+            default:
+                return false;
+        }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -103,4 +125,6 @@ public class MainActivity extends Activity {
         }
 
     }
+
+
 }
